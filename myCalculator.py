@@ -38,3 +38,5 @@ calcFunct = operations[operationSymbol]
 secondAnswer = calcFunct(firstAnswer, number3)
 
 print(f"{firstAnswer} {operationSymbol} {number3} = {secondAnswer}")
+
+print("Hello")
