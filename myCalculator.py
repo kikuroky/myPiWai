@@ -1,4 +1,7 @@
 #Definition of operators
+from email.errors import InvalidMultipartContentTransferEncodingDefect
+
+
 def add(n1, n2):
     return n1 + n2
 
@@ -19,24 +22,27 @@ operations = {
     "/": divide,
 }
 
-#Input numbers
-number1 = int(input("What is your first number?: "))
-for symbol in operations:
-    print(symbol)
+#Create main function
+def calculator():
+    number1 = int(input("What is your first number?: "))
+    for symbol in operations:
+        print(symbol)
+    isContinue = True
 
-operationSymbol = input("Pick an operation: ")
-number2 = int(input("What is your next number?: "))
-calcFunct = operations[operationSymbol]
-firstAnswer = calcFunct(number1, number2)
+    #Looping till user choose not to continue
+    while isContinue:
+        operationSymbol = input("Pick an operation: ")
+        number2 = int(input("What is your next number?: "))
+        calcFunct = operations[operationSymbol]
+        answer = calcFunct(number1, number2)
+        print(f"{number1} {operationSymbol} {number2} = {answer}")
 
-print(f"{number1} {operationSymbol} {number2} = {firstAnswer}")
+        #Select condition
+        if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ") == "y":
+            number1 = answer
+        else:
+            isContinue = False
+            calculator()
 
-#Chaining calculation
-operationSymbol = input("Pick an operation: ")
-number3 = int(input("What is your next number?: "))
-calcFunct = operations[operationSymbol]
-secondAnswer = calcFunct(firstAnswer, number3)
-
-print(f"{firstAnswer} {operationSymbol} {number3} = {secondAnswer}")
-
-print("Hello")
+#Calling the main function
+calculator()
