@@ -44,4 +44,4 @@ def calculator():
 #Calling the main function
 calculator()
 
-print("MISS ME? BLINK")
+print("TRY ME BRO")
