@@ -43,5 +43,3 @@ def calculator():
 
 #Calling the main function
 calculator()
-
-print("PUSH")
