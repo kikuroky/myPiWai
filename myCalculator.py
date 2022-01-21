@@ -44,4 +44,5 @@ def calculator():
 #Calling the main function
 calculator()
 
+print("TRY ME BRO")
 print("YOU BET BRO")
