@@ -1,3 +1,7 @@
+#Import logo
+from turtle import clear
+from calculatorLogo import logo
+
 #Definition of operators
 def add(n1, n2):
     return n1 + n2
@@ -21,7 +25,8 @@ operations = {
 
 #Create main function
 def calculator():
-    number1 = int(input("What is your first number?: "))
+    print(logo)
+    number1 = float(input("What is your first number?: "))
     for symbol in operations:
         print(symbol)
     isContinue = True
@@ -29,7 +34,7 @@ def calculator():
     #Looping till user choose not to continue
     while isContinue:
         operationSymbol = input("Pick an operation: ")
-        number2 = int(input("What is your next number?: "))
+        number2 = float(input("What is your next number?: "))
         calcFunct = operations[operationSymbol]
         answer = calcFunct(number1, number2)
         print(f"{number1} {operationSymbol} {number2} = {answer}")
@@ -39,9 +44,8 @@ def calculator():
             number1 = answer
         else:
             isContinue = False
+            clear()
             calculator()
 
 #Calling the main function
 calculator()
-
-print("YOU BET BRO")
