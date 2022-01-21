@@ -25,8 +25,16 @@ for symbol in operations:
     print(symbol)
 
 operationSymbol = input("Pick an operation: ")
-number2 = int(input("What is your second number?: "))
+number2 = int(input("What is your next number?: "))
 calcFunct = operations[operationSymbol]
 firstAnswer = calcFunct(number1, number2)
 
 print(f"{number1} {operationSymbol} {number2} = {firstAnswer}")
+
+#Chaining calculation
+operationSymbol = input("Pick an operation: ")
+number3 = int(input("What is your next number?: "))
+calcFunct = operations[operationSymbol]
+secondAnswer = calcFunct(firstAnswer, number3)
+
+print(f"{firstAnswer} {operationSymbol} {number3} = {secondAnswer}")
