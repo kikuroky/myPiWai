@@ -1,7 +1,4 @@
 #Definition of operators
-from email.errors import InvalidMultipartContentTransferEncodingDefect
-
-
 def add(n1, n2):
     return n1 + n2
 
